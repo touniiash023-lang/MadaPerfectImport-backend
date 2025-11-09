@@ -10,8 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // route test
-app.get("/", (req, res) => {
-  res.send("✅ API Mada Perfect Import fonctionne !");
+app.get("/api", (req, res) => res.send("✅ API active"));
 });
 
 // route principale produits
