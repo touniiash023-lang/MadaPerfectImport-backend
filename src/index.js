@@ -1,23 +1,23 @@
 import express from "express";
 import cors from "cors";
 import produitsRoutes from "./routes/produits.js";
-import db from "./db.js"; // ton fichier de connexion MySQL
+import db from "./db.js"; // Connexion MySQL
 
 const app = express();
 
-// middlewares
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// route test
+// Route de test
 app.get("/", (req, res) => {
-  res.send("✅ API active");
+  res.send("✅ API Mada Perfect Import fonctionne !");
 });
 
-// route principale produits
+// Route principale des produits
 app.use("/api/produits", produitsRoutes);
 
-// démarrage du serveur
+// Démarrage du serveur
 const PORT = process.env.PORT || 4002;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Serveur backend actif sur le port ${PORT}`);

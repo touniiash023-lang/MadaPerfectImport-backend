@@ -4,7 +4,7 @@ const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "mada_perfect_import"
+  database: "mada_perfect_import",
 });
 
 export default db;
