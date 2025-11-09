@@ -1,10 +1,11 @@
 import mysql from "mysql2/promise";
 
-const db = await mysql.createPool({
+const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "madaperfect_db",
+  database: "mada_perfect_import"
 });
 
 export default db;
+

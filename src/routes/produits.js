@@ -8,9 +8,9 @@ router.get("/", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM produits");
     res.json(rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Erreur lors du chargement des produits" });
+  } catch (error) {
+    console.error("Erreur:", error);
+    res.status(500).json({ message: "Erreur serveur" });
   }
 });
 
