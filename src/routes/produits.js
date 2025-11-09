@@ -3,7 +3,7 @@ import db from "../db.js";
 
 const router = express.Router();
 
-// Récupérer tous les produits
+// Route pour récupérer tous les produits
 router.get("/", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM produits");
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Ajouter un produit
+// Route pour ajouter un produit
 router.post("/", async (req, res) => {
   try {
     const { nom, prix, description, lien, image } = req.body;
@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
       "INSERT INTO produits (nom, prix, description, lien, image) VALUES (?, ?, ?, ?, ?)",
       [nom, prix, description, lien, image]
     );
-    res.json({ message: "Produit ajouté avec succès !" });
+    res.json({ message: "✅ Produit ajouté avec succès !" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Erreur lors de l’ajout du produit" });
@@ -30,3 +30,4 @@ router.post("/", async (req, res) => {
 });
 
 export default router;
+
