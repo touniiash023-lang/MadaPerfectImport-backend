@@ -10,7 +10,10 @@ app.use(express.json());
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/produits", produitsRoutes);
 
-app.listen(4002, () => {
-  console.log("✅ Serveur backend actif sur http://localhost:4002");
+const PORT = process.env.PORT || 4002;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Serveur backend actif sur http://localhost:${PORT}`);
 });
+
 
