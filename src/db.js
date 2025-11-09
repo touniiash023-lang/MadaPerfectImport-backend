@@ -1,6 +1,10 @@
-const { Pool } = require('pg');
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-module.exports = {
-  query: (text, params) => pool.query(text, params),
-  pool
-};
+import mysql from "mysql2/promise";
+
+const db = await mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "madaperfect_db",
+});
+
+export default db;
