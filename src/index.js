@@ -10,7 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // route test
-app.get("/api", (req, res) => res.send("✅ API active"));
+app.get("/", (req, res) => {
+  res.send("✅ API active");
 });
 
 // route principale produits
